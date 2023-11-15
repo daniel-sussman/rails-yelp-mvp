@@ -23,7 +23,7 @@ class ReviewsController < ApplicationController
         format.html { redirect_to restaurant_path(@restaurant), notice: "Review was successfully created." }
         format.json { render :show, status: :created, location: @review }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :show, status: :unprocessable_entity }
         format.json { render json: @review.errors, status: :unprocessable_entity }
       end
     end

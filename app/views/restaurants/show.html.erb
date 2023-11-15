@@ -8,9 +8,18 @@
     <p>Rating: <%= "⭐️" * review.rating %></p>
     <p><%= review.content %></p>
   <% end %>
-  <p><%= link_to "Leave a review", new_restaurant_review_path(@restaurant) %></p>
+  <h4>Leave a review for <%= @restaurant.name %>:</h4>
+  <div class="container">
+
+    <%= render "review_form", review: @review %>
+  </div>
+
 <% else %>
-  <p><%= link_to "Be the first to review this restaurant", new_restaurant_review_path(@restaurant) %></p>
+  <h4>Be the first to review <%= @restaurant.name %>:</h4>
+  <div class="container">
+
+    <%= render "review_form", review: @review %>
+  </div>
 <% end %>
 
 <div>
